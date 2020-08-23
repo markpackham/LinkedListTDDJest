@@ -12,3 +12,5 @@ ll.print();
 console.log(ll.getByIndex(0).value);
 ll.removeAtIndex(0);
 ll.print();
+ll.removeAtIndex(2);
+ll.print();

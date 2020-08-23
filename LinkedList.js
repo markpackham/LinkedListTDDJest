@@ -40,6 +40,12 @@ class LinkedList {
 
   removeAtIndex(index) {
     if (index === 0) return this.removeHead();
+
+    const prev = this.getByIndex(index - 1);
+    if (prev == null) return null;
+
+    prev.next = prev.next.next;
+    this.length--;
   }
 
   // print content for when running tests in app
