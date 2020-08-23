@@ -21,6 +21,17 @@ class LinkedList {
     }
     return current;
   }
+
+  // print content for when running tests in app
+  print() {
+    let output = "";
+    let current = this.head;
+    while (current) {
+      output = `${output}${current.value} -> `;
+      current = current.next;
+    }
+    console.log(`${output}null`);
+  }
 }
 
 class LinkedListNode {
