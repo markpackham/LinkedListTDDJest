@@ -11,6 +11,11 @@ class LinkedList {
     this.length++;
   }
 
+  removeHead() {
+    this.head = this.head.next;
+    this.length--;
+  }
+
   getByIndex(index) {
     // Arrays are faster than LinkedLists when searching for something
     // return null if search is out of bounds
@@ -31,6 +36,10 @@ class LinkedList {
 
     prev.next = new LinkedListNode(value, prev.next);
     this.length++;
+  }
+
+  removeAtIndex(index) {
+    if (index === 0) return this.removeHead();
   }
 
   // print content for when running tests in app
