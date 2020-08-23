@@ -1,18 +1,6 @@
 const LinkedList = require("./LinkedList");
 
-describe("#insertAtHead", () => {
-  test("it adds the element to the beginging of the list", () => {
-    const ll = new LinkedList();
-    ll.insertAtHead(10);
-    const oldHead = ll.head;
-    ll.insertAtHead(20);
-
-    expect(ll.head.value).toBe(20);
-    expect(ll.head.next).toBe(oldHead);
-    expect(ll.length).toBe(2);
-  });
-});
-
+// Get tests
 describe("#getByIndex", () => {
   describe("with index less than 0", () => {
     test("it returns null", () => {
@@ -43,6 +31,20 @@ describe("#getByIndex", () => {
       const ll = LinkedList.fromValues(10, 20, 30, 40);
 
       expect(ll.getByIndex(2).value).toBe(30);
+    });
+  });
+
+  // Insert tests
+  describe("#insertAtHead", () => {
+    test("it adds the element to the beginging of the list", () => {
+      const ll = new LinkedList();
+      ll.insertAtHead(10);
+      const oldHead = ll.head;
+      ll.insertAtHead(20);
+
+      expect(ll.head.value).toBe(20);
+      expect(ll.head.next).toBe(oldHead);
+      expect(ll.length).toBe(2);
     });
   });
 
@@ -86,6 +88,17 @@ describe("#getByIndex", () => {
         expect(node.next.value).toBe(30);
         expect(ll.length).toBe(5);
       });
+    });
+  });
+
+  // Remove tests
+  describe("#removeHead", () => {
+    test("removes the head", () => {
+      const ll = LinkedList.fromValues(10, 20, 30);
+      ll.removeHead();
+
+      expect(ll.head.value).toBe(20);
+      expect(ll.length).toBe(2);
     });
   });
 });
