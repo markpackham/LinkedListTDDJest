@@ -1,3 +1,4 @@
+// LinkedLists are efficient for adding and removing items but Arrays are way better for searching for items
 class LinkedList {
   constructor() {
     this.head = null;

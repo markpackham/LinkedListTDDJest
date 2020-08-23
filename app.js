@@ -1,4 +1,5 @@
 // LinkedList with TDD learned from https://www.youtube.com/watch?v=gJjPWA8wpQg
+// To use the actual test file run "npm test"
 const LinkedList = require("./LinkedList");
 
 // const ll = LinkedList.fromValues(10, 20, 30, 40);
