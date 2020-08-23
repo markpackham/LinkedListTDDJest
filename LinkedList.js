@@ -22,6 +22,16 @@ class LinkedList {
     return current;
   }
 
+  insertAtIndex(index, value) {
+    if (index === 0) return this.insertAtHead(value);
+
+    const prev = this.getByIndex(index - 1);
+    if (prev == null) return null;
+
+    prev.next = new LinkedListNode(value, prev.next);
+    this.length++;
+  }
+
   // print content for when running tests in app
   print() {
     let output = "";
